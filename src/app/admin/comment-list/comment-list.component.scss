@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  
+  .container {
+    margin-top: 24px;
+  }
+  .add_button {
+      text-align: right;
+  }
+
+  .approved {
+    width: 30px;
+    mat-chip {
+      margin-right: 10px;
+    }
+  }

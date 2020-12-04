@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <h3>Add New Blog</h3>
+        </div>
+    </div>
+    <form [formGroup]="addBlogForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="BlogTitle">
+                    <mat-error>Title is required</mat-error>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Short Description</mat-label>
+                    <textarea matInput formControlName="Shortdisc"></textarea>
+                    <mat-error *ngIf="addBlogForm.get('Shortdisc').hasError('required')">Short description is required</mat-error>
+                    <mat-error *ngIf="addBlogForm.get('Shortdisc').hasError('maxlength')">
+                        Maximum 200 number of characters allowed
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row long_disc">
+            <div class="col-md-12">
+                <label> Long Description</label>
+                <div formControlName="Content" [ngxSummernote]="config" (mediaDelete)="onDelete($event)"></div>
+               
+                <span class="val_error"
+                *ngIf="submitted && addBlogFormControl.Content.errors?.required">
+                Long description is required
+            </span>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Content</mat-label>
+                    <textarea matInput formControlName="Content"></textarea>
+                    <mat-error>Content is required</mat-error>
+                </mat-form-field>
+             
+            </div>
+        </div> -->
+        <div class="row long_disc">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Blog Category</mat-label>
+                    <mat-select formControlName="BlogCategory" multiple>
+                        <mat-option *ngFor="let category of blogCategories" [value]="category.id">
+                            {{category.blogCategory}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Category is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="btn img"> <input formControlName="ImageOne1" type="file"
+                        accept="image/x-png,image/gif,image/jpeg" #file (change)="fileChangeEvent($event)">Thumbnail
+                    Image</label> <br> 
+                    <span class="val_error"
+                    *ngIf="submitted && addBlogFormControl.ImageOne1.errors?.required">
+                    Thumbnail image is required
+                </span> <span>{{imgName1}}</span>
+            </div>
+            <div class="col-md-6">
+                <label class="btn img"> <input formControlName="ImageTwo1" type="file"
+                    accept="image/x-png,image/gif,image/jpeg" #file (change)="fileChangeEvent1($event)">Cover
+                    Image</label> <br> 
+                    <span class="val_error"
+                    *ngIf="submitted && addBlogFormControl.ImageTwo1.errors?.required">
+                    Cover image is required
+                </span>
+                   <span>{{imgName2}}</span>
+
+            </div>
+        </div>
+        <div class="row mt-24 mb-24">
+            <div class="col-md-12 center">
+                <button [disabled]="disableButton" mat-raised-button color="primary" type="submit">Add Blog</button>
+            </div>
+        </div>
+    </form>
+</div>

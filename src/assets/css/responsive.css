@@ -1,0 +1,125 @@
+@media only screen and (max-width: 1920px) {
+    .banner-ayn .round-ayn {
+        position: absolute;
+        /* right: 0px; */
+        top: 18px;
+        width: 864px;
+        height: 650px;
+        display: block;
+        background: url(../images/pattern.png) center center no-repeat;
+    }
+}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (max-width: 767px) {
+    .nav-item {
+        padding: 15px;
+        background: #142e61;
+    }
+    .navbar-light .navbar-nav .active>.nav-link,
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .show>.nav-link {
+        color: #fff;
+        opacity: 1;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: #fff;
+    }
+    .manage_effect {
+        background: #fff;
+        margin-top: 0px;
+    }
+    .navbar-light .navbar-nav .nav-link:focus,
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+    .navbar-light .navbar-toggler {
+        color: rgb(255 255 255);
+        border-color: #142e61;
+        outline: none;
+        margin-right: 15px;
+    }
+    .navbar-brand {
+        padding-top: 0px;
+        padding-left: 15px;
+    }
+    .round-ayn {
+        display: none !important;
+    }
+    .banner-ayn .content-column h2 {
+        font-size: 35px;
+    }
+    .banner-ayn .content-column .inner-section {
+        position: relative;
+        padding-top: 100px;
+    }
+    .ayn_app .app_content .app_inner {
+        padding-top: 50px;
+    }
+    .banner-ayn .image-section {
+        display: none;
+    }
+    .ayn_app .app_content .app_inner {
+        padding-left: 0px;
+    }
+    .paroller {
+        -webkit-transform: translate(0) !important;
+        -ms-transform: translate(0) !important;
+        transform: translate(0) !important;
+    }
+    .ayn_service_two .image_service .all_service_inner_column {
+        padding-left: 0px;
+    }
+    .image_service img {
+        width: 100%;
+    }
+    .ayn_service_three .image_service {
+        order: 2;
+    }
+    .ayn_service_three .all_service_inner .all_service_content .all_service_inner_column {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+    .testimonial-ayn {
+        padding: 50px 0px 50px;
+    }
+    .image_team {
+        display: none;
+    }
+    .crm_pricing {
+        position: relative;
+        padding: 70px 0px 50px;
+    }
+    .crm_pricing {
+        padding-top: 50px;
+    }
+    .crm_pricing .crm_pricing_option {
+        margin-top: 0px;
+    }
+    .our_client {
+        padding: 50px 0px 60px;
+        background-color: #fbfbfb;
+    }
+    .crm_footer .footer_sub_sec {
+        width: 100%;
+    }
+    .btn-banner {
+        padding: 12px 15px 12px;
+    }
+    .testimonial-ayn .carousel-ayn .inner-testimonial {
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+    .crm_footer .footer_data {
+        position: relative;
+        padding: 15px 0px 30px;
+    }
+    .crm_footer {
+        padding-top: 270px;
+        margin-top: -100px;
+    }
+}

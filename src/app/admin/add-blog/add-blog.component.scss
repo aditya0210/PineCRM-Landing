@@ -1,0 +1,26 @@
+.container {
+    margin-top: 24px;
+}
+.example-full-width {
+    width: 100%;
+}
+.center {
+    text-align: center;
+}
+.img {
+    background: #dedede;
+    border: none;
+    padding: 8px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+}
+.long_disc {
+    margin-bottom: 10px;
+}
+.val_error{
+    font-size: 14px;
+    color: #f44336;
+  }

@@ -1,0 +1,58 @@
+.login_part1 {
+    background-image: linear-gradient(to right, #0063b8, #003b9d);
+    background-image: url('../../../assets/imgs/login/login_left_bottom_new.png'); 
+    background-position: left bottom; 
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 305px 285px;
+}
+
+.gradient{background-image: linear-gradient(to right, #0063b8, #003b9d);}
+.left_center img{
+    width: 80%;
+    margin-top: -30px;
+}
+.left_top {
+    color: #fff;
+    padding-top: 50px;
+    hr {
+        width: 50px;
+        background: #fff;
+        height: 2px;
+    }
+}
+.login_part2 {
+    background-image: url('../../../assets/imgs/login/login_right_top.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 100vh;
+    .login_form {
+       padding-top: 200px;
+        max-width: 80%;
+        margin: 0 auto;
+        img {
+            width: 22%;
+            margin-bottom: 35px;
+        }
+        button {
+            width: 100%;
+            border-radius: 14px;
+            background-color: #003b9d;
+        }
+    }
+}
+.form-control {
+    // height: calc(2em + .75rem + 2px);
+    border-radius: 1rem;
+}
+.register {
+    text-align: center;
+    margin-top: 15px;
+}
+.form-check a {
+    float: right;
+}
+.val_error{
+    font-size: 14px;
+    color: #dc3545;
+  }

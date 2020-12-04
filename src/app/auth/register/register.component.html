@@ -1,0 +1,254 @@
+<div class="fluid-container" style="overflow:  hidden !important;">
+    <div class="row ">
+        <div class="col-md-6 gradient">
+            <div class="login_part1">
+                <div class="text-center">
+                    <div class="left_top ">
+                        <h3>Sign Up!</h3>
+                        <hr>
+                    </div>
+                    <div class="left_center">
+                        <img src="../../../assets/imgs/login/Artboard – 1.svg" alt="center img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="login_part2 align-items-center">
+                <div class="login_form center-block">
+                    <img class="cursor-pointer" routerLink="/landing" src="../../../assets/imgs/login/logo.png"
+                        alt="logo">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control" id="employees" formControlName="salutation">
+                                        <option value="">Salutation</option>
+                                        <option>Mr.</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                        <option>Dr.</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="First Name"
+                                        formControlName="first_name">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="lname" placeholder="Last Name"
+                                        formControlName="last_name">
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.last_name.touched || submitted) && regitsterFormControls.last_name.errors?.required">
+                                        Last Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <select class="form-control" id="employees" >
+                                <option value="">Salutation</option>
+                                <option>Mr.</option>
+                                <option>Mrs.</option>
+                                <option>Ms.</option>
+                                <option>Dr.</option>
+                            </select>
+                         </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="First Name"
+                                formControlName="fname">
+                            <span class="val_error"
+                                *ngIf="(regitsterFormControls.fname.touched || submitted) && regitsterFormControls.fname.errors?.required">
+                                First Name is required
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="lname" placeholder="Last Name"
+                                formControlName="lname">
+                            <span class="val_error"
+                                *ngIf="(regitsterFormControls.lname.touched || submitted) && regitsterFormControls.lname.errors?.required">
+                                Last Name is required
+                            </span>
+                        </div> -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Email Address"
+                                        formControlName="email">
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.email.touched || submitted) && regitsterFormControls.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="val_error"
+                                        *ngIf="regitsterFormControls.email.touched && regitsterFormControls.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Phone Number"
+                                        formControlName="phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="lname" placeholder="User Name"
+                                        formControlName="username">
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.username.touched || submitted) && regitsterFormControls.username.errors?.required">
+                                        Username is required
+                                    </span>
+                                    <span class="val_error" *ngIf="usernameError">
+                                        {{usernameErrorMessage}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="lname" placeholder="Password"
+                                        formControlName="password">
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.password.touched || submitted) && regitsterFormControls.password.errors?.required">
+                                        Password is required
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control" id="employees" formControlName="employees">
+                                        <option value="">Employees</option>
+                                        <option>1-15</option>
+                                        <option>16-30</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="lname" placeholder="Job Title"
+                                        formControlName="job_title">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="company_name" placeholder="Company"
+                                formControlName="company_name">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" id="employees" formControlName="country">
+                                        <option value="">Country</option>
+                                        <option *ngFor="let country of countryList" value={{country.id}}>
+                                            {{country.name}}</option>
+                                    </select>
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.country.touched || submitted) && regitsterFormControls.country.errors?.required">
+                                        country is required
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" id="employees" formControlName="state">
+                                        <option value="">State/Province</option>
+                                        <option *ngFor="let state of statesList" value={{state.id}}>{{state.name}}
+                                        </option>
+                                    </select>
+
+                                    <span class="val_error"
+                                        *ngIf="(regitsterFormControls.state.touched || submitted) && regitsterFormControls.state.errors?.required">
+                                        State is Required
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="lname" placeholder="Zipcode"
+                                        formControlName="zipcode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" id="employees" formControlName="security_question">
+                                <option value="">Security Questions</option>
+                                <option>Which was the first school you attended?</option>
+                                <option>In what town or city you born?</option>
+                                <option>What was the name of your childhood superhero?</option>
+                                <option>What was your mother's maiden name?</option>
+                                <option>What was your first car?</option>
+                                <option>What is your dream holiday destination</option>
+                            </select>
+                            <span class="val_error"
+                                *ngIf="(regitsterFormControls.security_question.touched || submitted) && regitsterFormControls.security_question.errors?.required">
+                                Security Questions is Required
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email" placeholder="Answer"
+                                formControlName="answer">
+                            <span class="val_error"
+                                *ngIf="(regitsterFormControls.answer.touched || submitted) && regitsterFormControls.answer.errors?.required">
+                                Answer is Required
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input val_error" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    <span class="mrb"> Master Subscription Agreement</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group fs">
+                            By registering, you confirm that you agree to the storing and processing of your personal
+                            data by Salesforce as described in the ,<a href="../../../assets/blank.pdf" target="_blank">
+                                Privacy Statement.</a>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <ngx-recaptcha2 #captchaElem [siteKey]="'6LeOZ4YUAAAAAJ8clQYNtOXNDHsd58KZHyJeILk6'"
+                                (success)="handleSuccess($event)" [useGlobalDomain]="false" [size]="size" [hl]="lang"
+                                [theme]="theme" [type]="type" formControlName="recaptcha">
+                            </ngx-recaptcha2>
+                        </div> -->
+
+                        <button type="submit" class="btn btn-primary">Create your account</button>
+                        <div class="login">
+                            <span> Already Registered? <a routerLink="/login">Login</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
